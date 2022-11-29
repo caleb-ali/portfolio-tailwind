@@ -26,7 +26,7 @@ const Navbar = () => {
 
         <div className="block lg:hidden">
           <button
-            className=" text-hibiscus-600 rounded-md outline-none focus:border-hibiscus-400 focus:border"
+            className=" text-gray-600 rounded-md outline-none focus:border-gray-400 focus:border"
             onClick={() => setNavbar(!navbar)}
           >
             {navbar ? (

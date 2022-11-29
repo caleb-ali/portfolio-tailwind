@@ -7,6 +7,9 @@ const Project = () => {
   return (
     <div>
       <Navbar/>
+      <Projectlist/>
+      <Footerpage/>
+      
     </div>
   )
 }
