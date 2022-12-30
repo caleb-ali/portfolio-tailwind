@@ -16,7 +16,7 @@ const Projectlist = () => {
                 <img src={post.image} className="h-96 w-96 " />
                 <div>
                   <div className="flex flex-col  text-gray-500">
-                    <span className="text-xl">{post.title}</span>
+                    <span className="text-xl text-persian-green-600">{post.title}</span>
                     <span className="text-xs">{post.technology}</span>
                     <span className="text-sm font-thin mt-4">
                       {post.description}

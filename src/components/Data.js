@@ -1,5 +1,6 @@
 import puzzle from "../assets/puzzle.jpg";
-import metabnb from "../assets/metabnb1.png";
+import metabnb from "../assets/metabnb1.jpg";
+import weather from "../assets/weather.jpg";
 
 export const projectcards  = [
 
@@ -23,11 +24,11 @@ export const projectcards  = [
 
   {
       id: 3,
-      title: "Admin Dashboard",
+      title: "Weather App",
       link:"www.w3schools.com/cssref/sel_hover.asp",
-      description: "Dashboard with kanban, calendar and other tools",
-      technology: "React + Tailwind CSS + Context API + Syncfusion",
-     
+      description: "Weather app that displays weather in various cities",
+      technology: "React + Tailwind CSS + RapidAPI",
+      image:weather
   },
   
 ];

@@ -26,7 +26,7 @@ const Contactpage = () => {
       );
   };
   return (
-    <div className="font-Redrose lg:mb-[140px] lg:mt-[60px] lg:py-4 px-8 py-8 mx-auto max-w-screen-md">
+    <div className="font-Redrose mb-56 lg:mb-[140px] lg:mt-[60px] lg:py-4 px-8 py-8 mx-auto max-w-screen-md">
       <p className="text-gray-700">
         <span className="font-semibold text-persian-green-600 ">
           {" "}
