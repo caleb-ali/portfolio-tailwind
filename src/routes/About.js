@@ -8,6 +8,7 @@ const About = () => {
   return (
     <div>
       <Navbar/>
+      <Profile/>
       <Footerpage/>
     </div>
   )

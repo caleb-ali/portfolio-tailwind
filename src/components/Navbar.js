@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
 
-  const [modal, setModal] = useState(false);
+  {
+    /*const [modal, setModal] = useState(false);
 
   const toggleModal = () => {
     setModal((prevState) => !prevState);
@@ -15,13 +16,14 @@ const Navbar = () => {
     document.body.classList.add("active-modal");
   } else {
     document.body.classList.remove("active-modal");
+  }*/
   }
 
   return (
     <div>
       <nav className="flex lg:flow-root items-center justify-between flex-wrap p-4 lg:pt-10 bg-white ">
-        <div className="text-2xl lg:ml-24 font-Redrose text-gray-800 lg:float-left">
-         <p>CALEB ALI</p>
+        <div className="text-2xl lg:ml-24 font-Redrose  lg:float-left">
+          <p className="text-persian-green-600">CALEB ALI</p>
         </div>
 
         <div className="block lg:hidden">
@@ -69,15 +71,16 @@ const Navbar = () => {
           <div className="text-lg  lg:flex-grow font-Redrose text-gray-800">
             <Link
               to="/"
-              className="block mt-4 lg:inline-block lg:mt-0 ml-4  lg:mr-8"
+              className="block mt-4 lg:inline-block lg:mt-0 ml-4  lg:mr-8  hover:underline decoration-persian-green-600"
               id=""
             >
               Home
+             
             </Link>
 
             <Link
               to="/project"
-              className="block mt-4 lg:inline-block lg:mt-0 ml-4 lg:mr-8"
+              className="block mt-4 lg:inline-block lg:mt-0 ml-4 lg:mr-8  hover:underline decoration-persian-green-600"
               id=""
             >
               Projects
@@ -85,20 +88,22 @@ const Navbar = () => {
 
             <Link
               to="/about"
-              className="block mt-4 lg:inline-block lg:mt-0 ml-4 lg:mr-8"
+              className="block mt-4 lg:inline-block lg:mt-0 ml-4 lg:mr-8  hover:underline decoration-persian-green-600"
               id=""
             >
               About
             </Link>
 
-            <Link to="/contact" className="block mt-4 lg:inline-block lg:mt-0 ml-4" id="">
+            <Link
+              to="/contact"
+              className="block mt-4 lg:inline-block lg:mt-0 ml-4  hover:underline decoration-persian-green-600"
+              id=""
+            >
               Contact
             </Link>
           </div>
-        
         </div>
       </nav>
-    
     </div>
   );
 };
