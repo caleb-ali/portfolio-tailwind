@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
+
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -20,11 +21,11 @@ const Navbar = () => {
   }
 
   return (
-    <div>
-      <nav className="flex lg:flow-root items-center justify-between flex-wrap p-4 lg:pt-10 bg-white ">
-        <div className="text-2xl lg:ml-24 font-Redrose  lg:float-left">
-          <p className="text-persian-green-600">CALEB ALI</p>
-        </div>
+    <div className="relative z-40">
+      <nav className="fixed top-0 left-0 right-0  flex lg:flow-root items-center justify-between flex-wrap p-4 lg:pt-10 bg-white ">
+        <a href='/'className="text-2xl lg:ml-24 font-Redrose  lg:float-left" >
+          <p className="text-persian-green-600" >CALEB ALI</p>
+        </a>
 
         <div className="block lg:hidden">
           <button
@@ -70,34 +71,34 @@ const Navbar = () => {
         >
           <div className="text-lg  lg:flex-grow font-Redrose text-gray-800">
             <Link
-              to="/"
+              to="hero" spy={true} smooth={true} offset={-120} duration={500}
               className="block mt-4 lg:inline-block lg:mt-0 ml-4  lg:mr-8  hover:underline decoration-persian-green-600"
-              id=""
+              
             >
               Home
              
             </Link>
 
             <Link
-              to="/project"
+              to="projects" spy={true} smooth={true} offset={-70} duration={500}
               className="block mt-4 lg:inline-block lg:mt-0 ml-4 lg:mr-8  hover:underline decoration-persian-green-600"
-              id=""
+              
             >
               Projects
             </Link>
 
             <Link
-              to="/about"
+              to="about" spy={true} smooth={true} offset={-130} duration={500}
               className="block mt-4 lg:inline-block lg:mt-0 ml-4 lg:mr-8  hover:underline decoration-persian-green-600"
-              id=""
+            
             >
               About
             </Link>
 
             <Link
-              to="/contact"
+             to="contact" spy={true} smooth={true} offset={-80} duration={500}
               className="block mt-4 lg:inline-block lg:mt-0 ml-4  hover:underline decoration-persian-green-600"
-              id=""
+              
             >
               Contact
             </Link>
