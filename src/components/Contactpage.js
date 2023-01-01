@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useRef } from "react";
+import { useFormInputValidation } from "react-form-input-validation";
 import emailjs from "@emailjs/browser";
 import { BsTwitter } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
@@ -10,27 +11,47 @@ const Contactpage = () => {
   const formRef = useRef();
   const [done, setDone] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    emailjs
-      .sendForm(
-        "service_63eiq5b",
-        "template_6fwxzlq",
-        formRef.current,
-        "jzPCXG5GJMKkMLvNx"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setDone(true);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+  const [fields, errors, form] = useFormInputValidation(
+    {
+      user_name: "",
+      user_email: "",
+      user_subject: "",
+      message: "",
+    },
+    {
+      user_name: "required",
+      user_email: "required|email",
+      user_subject: "required",
+      message: "required",
+    }
+  );
+
+  const onSubmit = async (event) => {
+    const isValid = await form.validate(event);
+    if (isValid) {
+      // console.log(fields, errors);
+      //e.preventDefault();
+      emailjs
+        .sendForm(
+          "service_63eiq5b",
+          "template_6fwxzlq",
+          formRef.current,
+          "jzPCXG5GJMKkMLvNx"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            setDone(true);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    }
   };
+
   return (
-    <div  id="contact">
+    <div id="contact">
       <div className="flex justify-center font-Redrose font-bold text-gray-500 text-2xl underline underline-offset-8 decoration-persian-green-600">
         Contact Me
       </div>
@@ -79,45 +100,71 @@ const Contactpage = () => {
           </div>
         </div>
 
-        <div
-          className="font-Redrose lg:py-4 lg:px-8 px-4  py-8 mx-auto max-w-screen-sm"
-         
-        >
+        <div className="font-Redrose lg:py-4 lg:px-8 px-4  py-8 mx-auto max-w-screen-sm">
           <p className="text-gray-500">
             <span className="font-semibold text-persian-green-600 ">
               {" "}
               What's your story?
             </span>{" "}
-            Always available for freelancing if the right<br className="hidden lg:block"/> projects comes along
-            
-              
+            Always available for freelancing if the right
+            <br className="hidden lg:block" /> projects comes along
           </p>
 
-          <form ref={formRef} onSubmit={handleSubmit}>
+          <form
+            ref={formRef}
+            onSubmit={onSubmit}
+            className="myForm"
+            noValidate
+            autoComplete="off"
+          >
             <input
               type="text"
               placeholder="Name"
               name="user_name"
+              onBlur={form.handleBlurEvent}
+              onChange={form.handleChangeEvent}
+              value={fields.user_name}
               className="outline-persian-green-500  w-full text-base leading-none text-black p-3 focus:oultine-none focus:border-white mt-4 bg-white border rounded border-gray-300 placeholder-gray-500"
             />
+            <label className="error text-red text-xs">
+              {errors.user_name ? errors.user_name : ""}
+            </label>
             <input
               type="text"
               placeholder="Subject"
               name="user_subject"
+              onBlur={form.handleBlurEvent}
+              onChange={form.handleChangeEvent}
+              value={fields.user_subject}
               className="outline-persian-green-500  w-full text-base leading-none text-black p-3 focus:oultine-none focus:border-white mt-4 bg-white border rounded border-gray-300 placeholder-gray-500"
             />
+             <label className="error text-red text-xs">
+              {errors.user_subject ? errors.user_subject : ""}
+            </label>
             <input
-              type="text"
               placeholder="Email"
               name="user_email"
+              type="email"
+              onBlur={form.handleBlurEvent}
+              onChange={form.handleChangeEvent}
+              value={fields.email_address}
               className="outline-persian-green-500  w-full text-base leading-none text-black p-3 focus:oultine-none focus:border-white mt-4 bg-white border rounded border-gray-300 placeholder-gray-500"
             />
+            <label className="error text-red text-xs">
+              {errors.user_email ? errors.user_email : ""}
+            </label>
             <textarea
               rows="5"
               placeholder="Message"
               name="message"
+              onBlur={form.handleBlurEvent}
+              onChange={form.handleChangeEvent}
+              value={fields.message}
               className="outline-persian-green-500  w-full text-base leading-none text-black p-3 focus:oultine-none focus:border-white mt-4 bg-white border rounded border-gray-300 placeholder-gray-500"
             />
+             <label className="error text-red text-xs">
+              {errors.message ? errors.message : ""}
+            </label>
             <button className=" w-full  bg-persian-green-500 hover:bg-persian-green-600 text-white font-normal mt-8  py-3 px-4  rounded">
               Submit
             </button>
