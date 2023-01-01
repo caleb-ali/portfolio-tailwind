@@ -4,7 +4,7 @@ import { projectcards } from "./Data";
 const Projectlist = () => {
   
   return (
-    <div className="lg:ml-24 lg:mr-24 ml-4 mr-4  lg:p-4 " id="projects" >
+    <div className="lg:ml-24 lg:mr-24 ml-4 mr-4 mt-4 lg:p-4 " id="projects" >
       <div className="flex justify-center font-Redrose font-bold text-gray-700 text-2xl underline underline-offset-8 decoration-persian-green-600">
         Projects
       </div>
