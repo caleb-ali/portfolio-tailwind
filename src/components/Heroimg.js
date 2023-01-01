@@ -6,7 +6,7 @@ import Introimg from "../assets/programmer.svg";
 const Heroimg = () => {
   return (
     <div className="flex flex-col justify-center items-center lg:items-left lg:flex-row lg:space-x-32  mx-auto  lg:mb-40  lg:mt-32 mt-[200px] font-Redrose " id="hero">
-       <div className="text-center text-3xl lg:text-5xl  text-gray-900 lg:mt-48 mt-[50px]">
+       <div className="text-center text-3xl lg:text-5xl  text-gray-900 lg:mt-48 ">
         <h1> <span className="text-persian-green-600">Hi.</span> I'm Caleb</h1>
         <h2> A Frontend developer</h2>
         <button
