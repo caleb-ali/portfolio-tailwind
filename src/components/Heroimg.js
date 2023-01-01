@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-scroll";
 import Introimg from "../assets/programmer.svg";
 
 
@@ -15,13 +15,14 @@ const Heroimg = () => {
           >
             Download resume 
           </button>
+          <Link to="projects" spy={true} smooth={true} offset={-70} duration={500} className="mt-2 text-sm  ml-4 px-4 py-2 rounded text-persian-green-600 font-normal border-[1px] hover:bg-persian-green-500 hover:border-[0px] hover:text-white">
+            {/*
           <button
-            href="#projects"
-          
-            class="mt-2 text-sm  ml-4 px-4 py-2 rounded text-persian-green-600 font-normal border-[1px] hover:bg-persian-green-500 hover:border-[0px] hover:text-white"
+            
           >
             view projects 
-          </button>
+  </button>*/}view projects
+          </Link>
       </div>
 
       <div className="lg:mt-10 p-4 ">
