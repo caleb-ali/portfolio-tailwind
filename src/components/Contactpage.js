@@ -34,12 +34,15 @@ const Contactpage = () => {
       <div className="flex justify-center font-Redrose font-bold text-gray-500 text-2xl underline underline-offset-8 decoration-persian-green-600">
         Contact Me
       </div>
-      <div className="lg:py-4 px-8 py-8 mt-8 lg:mb-[140px] mb-[40px] flex flex-col justify-center lg:flex-row lg:space-x-32  mx-auto ">
+      <div className="lg:py-4 lg:px-8  lg:mt-8 lg:mb-[140px] mb-[40px] flex flex-col justify-center lg:flex-row lg:space-x-32  mx-auto ">
         <div className=" text-gray-900 font-Redrose mt-4">
-          <h2 className="text-3xl lg:text-5xl">
+          <h2 className=" hidden lg:block text-5xl text-left">
             Love to hear <br /> from you, <br /> Get in touch.
           </h2>
-          <div className="lg:mt-[50px] flex flex-row items-center gap-4 text-3xl text-black">
+          <h2 className="block lg:hidden text-xl text-center mb-8">
+            Love to hear from you, Get in touch.
+          </h2>
+          <div className="lg:mt-[50px] flex flex-row justify-center lg:justify-start items-center gap-4 text-3xl text-black">
             <a
               href="https://twitter.com/_realkally"
               target="_blank"
@@ -77,7 +80,7 @@ const Contactpage = () => {
         </div>
 
         <div
-          className="font-Redrose lg:py-4 px-8 py-8 mx-auto max-w-screen-sm"
+          className="font-Redrose lg:py-4 lg:px-8 px-4  py-8 mx-auto max-w-screen-sm"
          
         >
           <p className="text-gray-500">
@@ -85,9 +88,9 @@ const Contactpage = () => {
               {" "}
               What's your story?
             </span>{" "}
-            Always available for freelancing if the right
-            <br />
-            projects comes along
+            Always available for freelancing if the right<br className="hidden lg:block"/> projects comes along
+            
+              
           </p>
 
           <form ref={formRef} onSubmit={handleSubmit}>

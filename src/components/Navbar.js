@@ -72,7 +72,7 @@ const Navbar = () => {
           <div className="text-lg  lg:flex-grow font-Redrose text-gray-800">
             <Link
               to="hero" spy={true} smooth={true} offset={-120} duration={500}
-              className="block mt-4 lg:inline-block lg:mt-0 ml-4  lg:mr-8  hover:underline decoration-persian-green-600"
+              className="block mt-4 lg:inline-block lg:mt-0 ml-4  lg:mr-8  hover:underline hover:underline-offset-8 decoration-persian-green-600"
               
             >
               Home
@@ -81,7 +81,7 @@ const Navbar = () => {
 
             <Link
               to="projects" spy={true} smooth={true} offset={-70} duration={500}
-              className="block mt-4 lg:inline-block lg:mt-0 ml-4 lg:mr-8  hover:underline decoration-persian-green-600"
+              className="block mt-4 lg:inline-block lg:mt-0 ml-4 lg:mr-8  hover:underline hover:underline-offset-8 decoration-persian-green-600"
               
             >
               Projects
@@ -89,7 +89,7 @@ const Navbar = () => {
 
             <Link
               to="about" spy={true} smooth={true} offset={-130} duration={500}
-              className="block mt-4 lg:inline-block lg:mt-0 ml-4 lg:mr-8  hover:underline decoration-persian-green-600"
+              className="block mt-4 lg:inline-block lg:mt-0 ml-4 lg:mr-8  hover:underline hover:underline-offset-8 decoration-persian-green-600"
             
             >
               About
@@ -97,7 +97,7 @@ const Navbar = () => {
 
             <Link
              to="contact" spy={true} smooth={true} offset={-80} duration={500}
-              className="block mt-4 lg:inline-block lg:mt-0 ml-4  hover:underline decoration-persian-green-600"
+              className="block mt-4 lg:inline-block lg:mt-0 ml-4  hover:underline hover:underline-offset-8 decoration-persian-green-600"
               
             >
               Contact
