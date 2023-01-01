@@ -5,14 +5,14 @@ const Profile = () => {
   return (
 <div className='p-4  lg:mb-[160px] lg:mt-[40px] mt-[50px] mb-[50px]'>
     <div className="flex justify-center font-Redrose font-bold text-gray-500 text-2xl underline underline-offset-8 decoration-persian-green-600">
-    About
+    Get to know me
   </div>
     <div className=' flex flex-col justify-center lg:flex-row lg:space-x-32  mx-auto ' id='about'>
-      <div className=' lg:mt-8 lg:mb-4 '>
-        <img className=' lg:w-[300px] rounded-[15px] mt-8' src={profileimg} alt="profileimg" />
+      <div className=' '>
+        <img className=' lg:w-[300px] rounded-[15px] mt-8 lg:mt-[55px] lg:mb-4  mb-8' src={profileimg} alt="profileimg" />
       </div>
-      <div className=' lg:mt-16 mt-8  mb-8 font-Redrose'>
-      <h1 className=' font-bold flex justify-center text-persian-green-600 text-xl'>Get to know me!</h1>
+      <div className=' lg:mt-12 lg:mb-4   mb-8 font-Redrose'>
+     
             <p className='lg:block hidden  text-gray-500 '>
             I'm a Front End Developer who loves working on new and <br/>creative projects. I have experience working with HTML, CSS, <br/>JavaScript, React, Tailwindcss and Git.
             I am passionate about <br/>creating innovative, user-friendly web applications and take <br/>pride in delivering high-performance
