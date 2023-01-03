@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { useRef } from "react";
 import { useFormInputValidation } from "react-form-input-validation";
 import emailjs from "@emailjs/browser";
@@ -11,6 +11,8 @@ const Contactpage = () => {
   const formRef = useRef();
   const [done, setDone] = useState(false);
 
+
+  //code below is for form validation to make sure all inputs are filled
   const [fields, errors, form] = useFormInputValidation(
     {
       user_name: "",
@@ -29,8 +31,7 @@ const Contactpage = () => {
   const onSubmit = async (event) => {
     const isValid = await form.validate(event);
     if (isValid) {
-      // console.log(fields, errors);
-      //e.preventDefault();
+      // if form is filled them email.js send an email
       emailjs
         .sendForm(
           "service_63eiq5b",
@@ -42,12 +43,15 @@ const Contactpage = () => {
           (result) => {
             console.log(result.text);
             setDone(true);
+            
           },
           (error) => {
             console.log(error.text);
           }
         );
     }
+
+    
   };
 
   return (
@@ -130,6 +134,7 @@ const Contactpage = () => {
               {errors.user_name ? errors.user_name : ""}
             </label>
             <input
+            
               type="text"
               placeholder="Subject"
               name="user_subject"
@@ -147,7 +152,7 @@ const Contactpage = () => {
               type="email"
               onBlur={form.handleBlurEvent}
               onChange={form.handleChangeEvent}
-              value={fields.email_address}
+              value={fields.user_email}
               className="outline-persian-green-500  w-full text-base leading-none text-black p-3 focus:oultine-none focus:border-white mt-4 bg-white border rounded border-gray-300 placeholder-gray-500"
             />
             <label className="error text-red text-xs">
