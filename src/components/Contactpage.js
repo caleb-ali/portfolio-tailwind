@@ -1,6 +1,7 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { useRef } from "react";
 import { useFormInputValidation } from "react-form-input-validation";
+
 import emailjs from "@emailjs/browser";
 import { BsTwitter } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
@@ -10,10 +11,10 @@ import { BsMedium } from "react-icons/bs";
 const Contactpage = () => {
   const formRef = useRef();
   const [done, setDone] = useState(false);
-
+  
 
   //code below is for form validation to make sure all inputs are filled
-  const [fields, errors, form] = useFormInputValidation(
+  const [fields, errors, form,] = useFormInputValidation(
     {
       user_name: "",
       user_email: "",
@@ -29,9 +30,14 @@ const Contactpage = () => {
   );
 
   const onSubmit = async (event) => {
+    event.preventDefault();
     const isValid = await form.validate(event);
     if (isValid) {
       // if form is filled them email.js send an email
+      fields.user_name=('');
+      fields.user_email=('');
+      fields.user_subject=('');
+      fields.message=('');
       emailjs
         .sendForm(
           "service_63eiq5b",
@@ -45,13 +51,14 @@ const Contactpage = () => {
             setDone(true);
             
           },
+          
           (error) => {
             console.log(error.text);
           }
+          
         );
+        
     }
-
-    
   };
 
   return (
@@ -134,16 +141,16 @@ const Contactpage = () => {
               {errors.user_name ? errors.user_name : ""}
             </label>
             <input
-            
               type="text"
               placeholder="Subject"
               name="user_subject"
               onBlur={form.handleBlurEvent}
               onChange={form.handleChangeEvent}
+             
               value={fields.user_subject}
               className="outline-persian-green-500  w-full text-base leading-none text-black p-3 focus:oultine-none focus:border-white mt-4 bg-white border rounded border-gray-300 placeholder-gray-500"
             />
-             <label className="error text-red text-xs">
+            <label className="error text-red text-xs">
               {errors.user_subject ? errors.user_subject : ""}
             </label>
             <input
@@ -167,10 +174,13 @@ const Contactpage = () => {
               value={fields.message}
               className="outline-persian-green-500  w-full text-base leading-none text-black p-3 focus:oultine-none focus:border-white mt-4 bg-white border rounded border-gray-300 placeholder-gray-500"
             />
-             <label className="error text-red text-xs">
+            <label className="error text-red text-xs">
               {errors.message ? errors.message : ""}
             </label>
-            <button className=" w-full  bg-persian-green-500 hover:bg-persian-green-600 text-white font-normal mt-8  py-3 px-4  rounded">
+            <button
+              type="submit"
+              className=" w-full  bg-persian-green-500 hover:bg-persian-green-600 text-white font-normal mt-8  py-3 px-4  rounded"
+            >
               Submit
             </button>
             {done && " thank you..."}
