@@ -30,7 +30,6 @@ const Contactpage = () => {
   );
 
   const onSubmit = async (event) => {
-    event.preventDefault();
     const isValid = await form.validate(event);
     if (isValid) {
       // if form is filled them email.js send an email
