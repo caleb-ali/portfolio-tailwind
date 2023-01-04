@@ -134,6 +134,7 @@ const Contactpage = () => {
               onBlur={form.handleBlurEvent}
               onChange={form.handleChangeEvent}
               value={fields.user_name}
+              data-attribute-name="Name"
               className="outline-persian-green-500  w-full text-base leading-none text-black p-3 focus:oultine-none focus:border-white mt-4 bg-white border rounded border-gray-300 placeholder-gray-500"
             />
             <label className="error text-red text-xs">
@@ -145,8 +146,8 @@ const Contactpage = () => {
               name="user_subject"
               onBlur={form.handleBlurEvent}
               onChange={form.handleChangeEvent}
-             
               value={fields.user_subject}
+              data-attribute-name="Subject"
               className="outline-persian-green-500  w-full text-base leading-none text-black p-3 focus:oultine-none focus:border-white mt-4 bg-white border rounded border-gray-300 placeholder-gray-500"
             />
             <label className="error text-red text-xs">
@@ -159,6 +160,7 @@ const Contactpage = () => {
               onBlur={form.handleBlurEvent}
               onChange={form.handleChangeEvent}
               value={fields.user_email}
+              data-attribute-name="Email"
               className="outline-persian-green-500  w-full text-base leading-none text-black p-3 focus:oultine-none focus:border-white mt-4 bg-white border rounded border-gray-300 placeholder-gray-500"
             />
             <label className="error text-red text-xs">
@@ -171,6 +173,7 @@ const Contactpage = () => {
               onBlur={form.handleBlurEvent}
               onChange={form.handleChangeEvent}
               value={fields.message}
+              data-attribute-name="Message"
               className="outline-persian-green-500  w-full text-base leading-none text-black p-3 focus:oultine-none focus:border-white mt-4 bg-white border rounded border-gray-300 placeholder-gray-500"
             />
             <label className="error text-red text-xs">
