@@ -11,7 +11,6 @@ import { BsMedium } from "react-icons/bs";
 const Contactpage = () => {
   const formRef = useRef();
   const [done, setDone] = useState(false);
-  
 
   //code below is for form validation to make sure all inputs are filled
   const [fields, errors, form,] = useFormInputValidation(
@@ -37,6 +36,7 @@ const Contactpage = () => {
       fields.user_email=('');
       fields.user_subject=('');
       fields.message=('');
+
       emailjs
         .sendForm(
           "service_63eiq5b",

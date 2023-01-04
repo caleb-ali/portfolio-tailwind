@@ -18,15 +18,15 @@ const Projectlist = () => {
                 <div>
                   <div className="flex flex-col  text-gray-500">
                     <span className="text-xl text-persian-green-600">{post.title}</span>
-                    <span className="text-xs">{post.technology}</span>
-                    <span className="text-sm font-thin mt-4">
+                    <span className="text-xs mt-[7x] mb-[2px] ">{post.technology}</span>
+                    <span className="text-xs mb-[7px] ">
                       {post.description}
                     </span>
                     <a
                       href={post.link}
                       target="_blank"
                       rel="nonreferrer"
-                      className="mt-2 text-sm px-4 py-2 rounded  bg-persian-green-500 hover:bg-persian-green-600 text-white font-normal flex justify-center"
+                      className=" text-sm px-4 py-2 rounded  bg-persian-green-500 hover:bg-persian-green-600 text-white font-normal flex justify-center"
                     >
                       <button>Visit Site</button>
                     </a>
