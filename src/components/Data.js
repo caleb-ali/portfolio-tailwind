@@ -25,9 +25,9 @@ export const projectcards  = [
   {
       id: 3,
       title: "Weather App",
-      link:"www.w3schools.com/cssref/sel_hover.asp",
+      link:"https://my-weather-app-plum.vercel.app",
       description: "Weather app that displays weather in various cities",
-      technology: "React + Tailwind CSS + RapidAPI",
+      technology: "React + Tailwind CSS + openweathermap API",
       image:weather
   },
   
