@@ -6,7 +6,7 @@ export const projectcards  = [
 
   {
       id: 1,
-      link:"https://quiz-github-io-6gqb.vercel.app",
+      link:"https://caleb-quiz-app.vercel.app/",
       title: "Quiz App",
       description: "A simple quiz app that displays result",
       technology: "HTML + CSS + Javascript",
