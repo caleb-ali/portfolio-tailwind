@@ -185,7 +185,7 @@ const Contactpage = () => {
             >
               Submit
             </button>
-            {done && " thank you..."}
+            {done && " submitted thank you..."}
           </form>
         </div>
       </div>
